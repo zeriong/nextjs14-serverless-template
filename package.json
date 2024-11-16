@@ -2,31 +2,26 @@
   "name": "next-serverless-template",
   "version": "0.1.0",
   "private": true,
-
   "prisma": {
     "schema": "./src/libs/prisma/schema"
   },
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-
     "set-prisma": "npm run db-push prisma-gen",
-
     "studio": "npx prisma studio",
     "prisma-gen": "npx prisma generate",
     "db-push": "npx prisma db push"
   },
-
   "dependencies": {
     "@prisma/client": "^5.21.1",
     "next": "15.0.1",
     "react": "19.0.0-rc-69d4b800-20241021",
-    "react-dom": "19.0.0-rc-69d4b800-20241021"
+    "react-dom": "19.0.0-rc-69d4b800-20241021",
+    "zustand": "^5.0.1"
   },
-
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
@@ -45,4 +40,3 @@
     "typescript": "^5"
   }
 }
-
