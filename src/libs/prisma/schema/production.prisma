@@ -1,0 +1,16 @@
+model Production {
+  id        Int        @id @default(autoincrement())
+  name     String
+  desc     String?
+  price   Int?
+  exppiredData      DateTime
+}
+
+model EventProduction {
+  id        Int        @id @default(autoincrement())
+  bargen  Int?
+  name     String
+  desc     String?
+  price   Int?
+  exppiredData      DateTime
+}

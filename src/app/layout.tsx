@@ -5,13 +5,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className=""
-      >
-        {children}
-      </body>
-    </html>
-  );
+  // todo: 사이트에 전체적으로 적용할 provider 설정 ex) reCaptcha
+  return <>{children}</>;
 }
