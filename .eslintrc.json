@@ -7,10 +7,6 @@
   ],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
-    "project": [
-      "./tsconfig.json",
-      "./tailwind.config.js"
-    ],
     "createDefaultProgram": true
   },
   "env": {
