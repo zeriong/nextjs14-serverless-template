@@ -16,7 +16,7 @@ export default function Home() {
       <p>메인페이지입니다.</p>
       <div>
         <ul>
-          {users.map((user: any) => (
+          {users?.map((user: any) => (
             <div key={user.id}>{user.name}</div>
           ))}
         </ul>
