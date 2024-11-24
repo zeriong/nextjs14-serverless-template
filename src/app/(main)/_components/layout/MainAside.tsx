@@ -1,14 +1,7 @@
 "use client";
 
-import { Card, Typography, List, ListItem, ListItemPrefix, ListItemSuffix, Chip } from "@material-tailwind/react";
-import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxIcon,
-  PowerIcon,
-} from "@heroicons/react/24/solid";
+import { Card, Typography, List, ListItem, ListItemPrefix, ListItemSuffix } from "@material-tailwind/react";
+import { MAIN_LAYOUT_EXAMPLE_LIST } from "@/constants/layout";
 
 export default function MainAside() {
   return (
@@ -18,46 +11,20 @@ export default function MainAside() {
           Sidebar
         </Typography>
       </div>
+
       <List>
-        <ListItem>
-          <ListItemPrefix>
-            <PresentationChartBarIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Dashboard
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <ShoppingBagIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          E-Commerce
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <InboxIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Inbox
-          <ListItemSuffix>
-            <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
-          </ListItemSuffix>
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <UserCircleIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Profile
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <Cog6ToothIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Settings
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <PowerIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Log Out
-        </ListItem>
+        {MAIN_LAYOUT_EXAMPLE_LIST.map((item) => (
+          <ListItem key={item.id}>
+            {/* 아이콘이 있을 경우 렌더링 */}
+            {item.icon && <ListItemPrefix>{item.icon}</ListItemPrefix>}
+
+            {/* 메뉴 타이틀 */}
+            {item.title}
+
+            {/* 옵션 아이콘이 있다면 렌더링 */}
+            {item.optionIcon && <ListItemSuffix>{item.optionIcon}</ListItemSuffix>}
+          </ListItem>
+        ))}
       </List>
     </Card>
   );

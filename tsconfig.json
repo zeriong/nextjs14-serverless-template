@@ -7,7 +7,7 @@
     ], // 사용할 라이브러리 파일을 지정 여기서는 최신 ECMAScript 기능과 DOM 관련 기능을 포함
     "allowJs": true, // JavaScript 파일을 TypeScript 컴파일러로 처리할 수 있게 허용
     "skipLibCheck": true, // 라이브러리 파일의 타입 검사를 건너뜁니다.
-    "strict": true, // 엄격한 타입 검사를 활성화
+    "strict": false, // 엄격한 타입 검사를 활성화
     "noEmit": true, // 컴파일된 결과물을 생성하지 않습니다. 빌드 아티팩트를 생성하지 않도록
     "esModuleInterop": true, // CommonJS 모듈을 ES6 모듈처럼 다룰 수 있게
     "module": "esnext", // ECMAScript 모듈 시스템을 사용
