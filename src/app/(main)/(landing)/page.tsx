@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useUserStore } from "@/store/auth/useUserStore";
 import { useEffect } from "react";
-import MainAside from "@/app/(main)/_components/layout/MainAside";
 
 export default function Home() {
   const { users } = useUserStore();
@@ -11,9 +10,8 @@ export default function Home() {
   useEffect(() => {}, []);
 
   return (
-    <div className="">
+    <div className="p-[30px]">
       <p>메인페이지입니다.</p>
-      <MainAside />
       <div>
         <ul>{users?.map((user: any) => <div key={user?.id}>{user?.name}</div>)}</ul>
       </div>
