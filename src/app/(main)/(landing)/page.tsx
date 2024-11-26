@@ -7,7 +7,11 @@ import { useEffect } from "react";
 export default function Home() {
   const { users } = useUserStore();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetch("/api/user")
+      .then((res) => console.log("통신 성공", res))
+      .catch((error) => console.log("통신 실패", error));
+  }, []);
 
   return (
     <div className="p-[30px]">
