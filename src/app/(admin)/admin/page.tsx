@@ -4,10 +4,12 @@ import Link from "next/link";
 import React, { useState } from "react";
 import DndVerticalSortableContext from "@/app/_components/dnd/DndVerticalSortableContext";
 import DndVerticalSortableItem from "@/app/_components/dnd/DndVerticalSortableItem";
-import Image from "next/image";
 
 export default function Page() {
-  const [items, setItems] = useState([{ name: "item" }, { name: "item2" }]);
+  const [items, setItems] = useState([
+    { id: "1", name: "item" },
+    { id: "2", name: "item2" },
+  ]);
 
   return (
     <div className="p-[30px]">
@@ -16,22 +18,17 @@ export default function Page() {
 
       <div className={"mt-4 bg-gray-400 p-3"}>
         <DndVerticalSortableContext items={items} setItems={setItems}>
-          {items?.map((item) => (
-            <DndVerticalSortableItem key={item.name}>
-              {({ attributes, listeners }) => (
-                <div>
-                  <div
-                    {...attributes}
-                    {...listeners}
-                    className=""
-                    tabIndex={-1} // 텝인덱스 방지
-                  >
-                    <Image src={"/assets/svg/drag_handle_icon.svg"} alt="drag_handle_icon" width={14} height={14} />
-                  </div>
-                </div>
-              )}
-            </DndVerticalSortableItem>
-          ))}
+          <ul className={"flex h-[2000px] flex-col gap-4 bg-red-400 p-10"}>
+            {items?.map((item) => (
+              <DndVerticalSortableItem key={item.name} id={item.id}>
+                {({ attributes, listeners }) => (
+                  <li {...attributes} {...listeners} className="bg-blue-400 p-3">
+                    {item.name}
+                  </li>
+                )}
+              </DndVerticalSortableItem>
+            ))}
+          </ul>
         </DndVerticalSortableContext>
       </div>
     </div>

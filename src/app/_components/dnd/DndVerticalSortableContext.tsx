@@ -19,8 +19,8 @@ export default function DndVerticalSortableContext({ children, items, setItems, 
       // react useState인 경우
       if (setItems && !setReduxItems) {
         setItems((items: any) => {
-          const oldIndex = items.indexOf(active.id);
-          const newIndex = items.indexOf(over.id);
+          const oldIndex = items.findIndex((item: any) => item.id === active.id);
+          const newIndex = items.findIndex((item: any) => item.id === over.id);
           return arrayMove(items, oldIndex, newIndex);
         });
         // store state dispatch로 세팅하는 경우 JSON 카피를 활용하여 새롭게 할당
