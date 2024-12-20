@@ -15,7 +15,7 @@ export default function DnDTemplate() {
   return (
     <div className={"bg-gray-400 p-3"}>
       <DndVerticalSortableContext items={items} setItems={setItems}>
-        <ul className={"flex h-fit w-[600px] flex-col gap-4 bg-white p-10"}>
+        <ul className={"flex h-fit w-[600px] flex-col gap-4 bg-white/90 p-10"}>
           {items?.map((item) => (
             <DndVerticalSortableItem key={item.name} id={item.id}>
               {({ attributes, listeners }) => (
