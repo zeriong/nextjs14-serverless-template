@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import DndVerticalSortableContext from "@/app/_components/dnd/DndVerticalSortableContext";
 import DndVerticalSortableItem from "@/app/_components/dnd/DndVerticalSortableItem";
 import TemplateContainer from "@/app/(admin)/admin/_components/template/container/TemplateContainer";
-import DnDTemplate from "@/app/(admin)/admin/_components/template/content/DnDTemplate";
+import DnDTemplate from "@/app/(admin)/admin/_components/template/content/dnd/DnDTemplate";
 
 export default function Page() {
   return (
@@ -19,6 +19,8 @@ export default function Page() {
         <TemplateContainer title={"DnD Template"}>
           <DnDTemplate />
         </TemplateContainer>
+
+        {/* tailwindcss material을 활용한 커스텀 모달 */}
       </div>
     </div>
   );
